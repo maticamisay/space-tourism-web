@@ -1,3 +1,5 @@
+@use "./util/mixins" as mixin;
+
 body {
   margin: 0;
   padding: 0;
@@ -63,4 +65,112 @@ a {
   min-height: 100vh;
   transition: 0.5s ease;
   background-color: rgb(22, 21, 21);
+}
+
+.main.destination {
+  background-image: url(../assets/destination/background-destination-desktop.jpg);
+  background-attachment: fixed;
+}
+
+.main.crew {
+  background-image: url(../assets/crew/background-crew-desktop.jpg);
+  background-attachment: fixed;
+}
+
+.main.technology {
+  background-image: url(../assets/technology/background-technology-desktop.jpg);
+  background-attachment: fixed;
+}
+
+.wrapper {
+  @include mixin.displayFlex(row, start, flex-end);
+  animation: appearBottom 1s ease;
+  z-index: 4;
+}
+
+.glide__bullet--active {
+  border-bottom: 2px solid white !important;
+}
+
+.loading {
+  position: absolute;
+  width: 20%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  img {
+    width: 100%;
+    margin: auto;
+    animation: rotate 7s;
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes appearBottom {
+  from {
+    margin-top: 100vh;
+  }
+  to {
+    margin-top: 0;
+  }
+}
+
+@keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 1025px) {
+  .desktop {
+    display: none;
+  }
+  .tablet {
+    display: block;
+  }
+  .wrapper {
+    flex-direction: column;
+  }
+  .main {
+    background-image: url(../assets/home/background-home-tablet.jpg);
+  }
+  .main.destination {
+    background-image: url(../assets/destination/background-destination-tablet.jpg);
+  }
+
+  .main.crew {
+    background-image: url(../assets/crew/background-crew-tablet.jpg);
+  }
+
+  .main.technology {
+    background-image: url(../assets/technology/background-technology-tablet.jpg);
+  }
+}
+
+@media (max-width: 480px) {
+  .main {
+    background-image: url(../assets/home/background-home-mobile.jpg);
+  }
+  .main.destination {
+    background-image: url(../assets/destination/background-destination-mobile.jpg);
+  }
+
+  .main.crew {
+    background-image: url(../assets/crew/background-crew-mobile.jpg);
+  }
+
+  .main.technology {
+    background-image: url(../assets/technology/background-technology-mobile.jpg);
+  }
 }
