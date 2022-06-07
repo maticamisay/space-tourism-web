@@ -8,12 +8,12 @@ import HomeComponent from "./home";
 import TechnologyComponent from "./technology";
 import CrewComponent from "./crew";
 
+// STYLES
+import '../scss/index.scss'
 const App = () => {
-
   const getData = async () => {
-    const response = await fetch('./data.json');
+    const response = await fetch("./data.json");
     const data = await response.json();
-    console.log(data);
     return data;
   };
   const location = useLocation().pathname;
@@ -28,10 +28,10 @@ const App = () => {
         <DestinationComponent data={getData()} />
       </Route>
       <Route path="/crew">
-        <CrewComponent data={getData()}/>
+        <CrewComponent data={getData()} />
       </Route>
       <Route path="/technology">
-        <TechnologyComponent data={getData()}/>
+        <TechnologyComponent data={getData()} />
       </Route>
     </div>
   );
