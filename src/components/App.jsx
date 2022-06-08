@@ -11,6 +11,7 @@ import CrewComponent from "./crew";
 // STYLES
 import "../scss/index.scss";
 const App = () => {
+  
   const URL =
     "https://raw.githubusercontent.com/Fernando0654/FEM_1_Tip_Calculator/main/data_fem_13.json";
   const getData = async () => {
