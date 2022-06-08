@@ -25,7 +25,7 @@ const navbar = ({ currentRoute }) => {
       </div>
       <ul
         className="navbar"
-        style={isShowing ? { right: "0" } : { right: "-50vh" }}
+        style={isShowing ? { right: "0" } : { right: "-60vh" }}
       >
         <div className="close">
           <img
