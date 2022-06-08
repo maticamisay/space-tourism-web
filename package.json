@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "webpack serve --open --config webpack.config.js --mode development",
     "build": "webpack --mode production --config webpack.config.js",
+    "deploy":"gh-pages -d dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/maticamisay/space-tourism-web/issues"
   },
-  "homepage": "https://github.com/maticamisay/space-tourism-web#readme",
+  "homepage": "https://github.com/maticamisay/space-tourism-web",
   "dependencies": {
     "@glidejs/glide": "^3.4.1",
     "gh-pages": "^4.0.0",
